@@ -1,4 +1,5 @@
 var totalScore = 0;
+var winCount = 0;
 
 document.getElementById('spinButton').addEventListener('click', function () {
   var reels = document.querySelectorAll('.reel');
@@ -36,25 +37,24 @@ function spinReel(reelId) {
 }
 
 function updateScore(symbols) {
-  var score = 0;
-  symbols.forEach(symbol => {
-    switch (symbol) {
-      case '7':
-        score += 100;
-        break;
-      case '🍒':
-        score += 50;
-        break;
-      case '🍋':
-        score += 20;
-        break;
-    }
-  });
-  totalScore += score;
-
-  document.getElementById('score').textContent = totalScore;
   if (symbols.every((val, i, arr) => val === arr[0])) {
     winCount++;
     document.getElementById('wins').textContent = winCount;
+
+    var score = 0;
+    switch (symbols[0]) {
+      case '7':
+        score = 100;
+        break;
+      case '🍒':
+        score = 50;
+        break;
+      case '🍋':
+        score = 20;
+        break;
+    }
+    totalScore += score;
   }
+  // スコアを更新
+  document.getElementById('score').textContent = totalScore;
 }
