@@ -1,5 +1,5 @@
-var totalScore = 0;
-var winCount = 0;
+let totalScore = 0;
+let winCount = 0;
 
 const PROB_LEMON = 0.5;
 const PROB_CHERRY = 0.3;
@@ -19,6 +19,7 @@ document.getElementById('spinButton').addEventListener('click', function () {
     });
     updateScore(symbols);
   }, 1000);
+  saveGame();
 });
 
 function spinReel(reelId) {
