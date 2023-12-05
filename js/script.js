@@ -23,7 +23,7 @@ document.getElementById('spinButton').addEventListener('click', function () {
 
 function spinReel(reelId) {
   var reel = document.getElementById(reelId);
-  var randomNumber = Math.floor(Math.random() * 3) + 1;
+  var randomNumber = Math.random();
   var symbol;
 
   if (randomNumber < PROB_LEMON) {
