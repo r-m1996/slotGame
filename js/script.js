@@ -1,6 +1,10 @@
 var totalScore = 0;
 var winCount = 0;
 
+const PROB_LEMON = 0.5;
+const PROB_CHERRY = 0.3;
+const PROB_SEVEN = 0.2;
+
 document.getElementById('spinButton').addEventListener('click', function () {
   var reels = document.querySelectorAll('.reel');
   reels.forEach(function (reel) {
@@ -21,16 +25,13 @@ function spinReel(reelId) {
   var reel = document.getElementById(reelId);
   var randomNumber = Math.floor(Math.random() * 3) + 1;
   var symbol;
-  switch (randomNumber) {
-    case 1:
-      symbol = '7';
-      break;
-    case 2:
-      symbol = '🍒';
-      break;
-    case 3:
-      symbol = '🍋';
-      break;
+
+  if (randomNumber < PROB_LEMON) {
+    symbol = '🍋';
+  } else if (randomNumber < PROB_LEMON + PROB_CHERRY) {
+    symbol = '🍒';
+  } else {
+    symbol = '7';
   }
   reel.textContent = symbol;
   return symbol;
