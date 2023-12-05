@@ -6,6 +6,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div id="cookieConsentPopup" style="display: none;">
+        <p>このサイトはユーザー体験を向上させるためにCookieを使用しています。</p>
+        <button id="acceptCookieConsent">同意する</button>
+    </div>
+
     <div id="scoreBoard">
         <p>スコア: <span id="score">0</span></p>
         <p>勝利回数: <span id="wins">0</span></p>
@@ -15,7 +20,7 @@
         <div id="reel2" class="reel">7</div>
         <div id="reel3" class="reel">7</div>
     </div>
-    <button id="spinButton">スピン</button>
+    <button id="spinButton" disabled>スピン</button>
     <script src="js/script.js"></script>
 </body>
 </html>
