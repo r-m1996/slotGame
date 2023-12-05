@@ -1,0 +1,65 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+#slotMachine {
+    background-color: #ddd;
+    border: 3px solid #333;
+    padding: 10px;
+    margin: auto;
+}
+
+.reel {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #666;
+    margin: 5px;
+    font-size: 2em;
+}
+
+#spinButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(0deg);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
+
+.spinning {
+    animation: spin 1s infinite linear;
+}
+
+@media (max-width: 600px) {
+    .reel {
+        width: 30px;
+        height: 30px;
+        font-size: 1.5em;
+    }
+
+    #spinButton {
+        font-size: 0.8em;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    .reel {
+        width: 40px;
+        height: 40px;
+        font-size: 1.75em;
+    }
+
+    #spinButton {
+        font-size: 0.9em;
+    }
+}
